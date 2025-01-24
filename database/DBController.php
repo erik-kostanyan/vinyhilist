@@ -11,7 +11,8 @@ class DBController
 
     public function __construct()
     {
-        $this->con = mysqli_connect($this->host, $this->user, $this->password, $this->database, 3307);
+        // Specify your MySQL port as the fourth parameter in the following line, if you don't run MySQL on port 3306.
+        $this->con = mysqli_connect($this->host, $this->user, $this->password, $this->database);
         if ($this->con->connect_error){
             echo "Fail " . $this->con->connect_error;
         }
